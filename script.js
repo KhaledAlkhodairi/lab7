@@ -1,7 +1,9 @@
 const btnXhr = document.getElementById("xhrsearch");
+////////////////////////////////////////////////////
 const btnFetch = document.getElementById("fetchSearch");
+///////////////////////////////////////////////////////
 const btnAsyncAwait = document.getElementById("fetchAsyncAwaitSearch");
-
+//////////////////////////////////////////////////
 let searchQueryElem = document.getElementById('query');
 let searchResults = document.getElementById('searchResults');
 
@@ -19,7 +21,7 @@ btnFetch.addEventListener('click', () => {
 btnAsyncAwait.addEventListener('click', () => {
     searchUsingFetchAsyncAwait(searchQueryElem.value);
 });
-
+////////////////////xhr/////////////
 function searchUsingXHR(query) {
     if (!query || query.trim().length === 0) {
         return;
@@ -35,7 +37,7 @@ function searchUsingXHR(query) {
     xhr.open('GET', API_URL + '?' + params);
     xhr.send();
 }
-
+/////////////////////fetch ////////////////////////
 function searchUsingFetch(query) {
     if (!query || query.trim().length === 0) {
         return;
@@ -46,7 +48,7 @@ function searchUsingFetch(query) {
         .then(data => displayResults(data))
         .catch(error => console.error(error));
 }
-
+////////////////FetchAsyncAwait//////////
 async function searchUsingFetchAsyncAwait(query) {
     if (!query || query.trim().length === 0) {
         return;
